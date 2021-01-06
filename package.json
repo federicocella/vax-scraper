@@ -1,0 +1,16 @@
+{
+    "name": "vax-scraper",
+    "version": "0.0.0",
+    "description": "Scraper for vaccination tracking",
+    "main": "crawler.js",
+    "author": "Federico Cella",
+    "license": "ISC",
+    "dependencies": {
+        "assert": "^2.0.0",
+        "cheerio": "^0.19.0",
+        "http": "0.0.1-security",
+        "mongodb": "^3.6.3",
+        "puppeteer": "^5.5.0",
+        "url-parse": "^1.0.5"
+    }
+}
