@@ -10,14 +10,7 @@ const insertDocument = function (db, value, callback) {
     // Get the documents collection
     const collection = db.collection('data');
 
-    /*collection.find({'vaccinated': value}).toArray(function(err, docs) {
-        assert.equal(err, null);
-        console.log("Found the following records");
-        console.log(docs);
-        callback(docs);
-      });*/
-
-    // Insert some documents
+    // Insert document
     collection.insertOne(
         { date: new Date(), vaccinated: value }, function (err, result) {
             assert.equal(err, null);
@@ -31,7 +24,7 @@ const insertDocument = function (db, value, callback) {
 const findDocument = async function (db, value, callback) {
     // Get the documents collection
     const collection = db.collection('data');
-    // Find some documents
+    // Find the document if it exists
     const doc = await collection.findOne({ 'vaccinated': value });
     callback(doc);
 }
@@ -74,8 +67,6 @@ setInterval(() => {
             });
             // perform actions on the collection object
         });
-
-        // await page.screenshot({ path: 'example.png' });
 
         await browser.close();
     })();
